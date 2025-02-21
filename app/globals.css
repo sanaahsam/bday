@@ -58,7 +58,7 @@ body {
   @apply w-[500px] h-[320px] bg-[#FFCE9D] rounded-2xl flex flex-col items-center pt-6 relative mb-10;
 }
 .homecardcontainer {
-  @apply w-[300px] h-[270px]  flex flex-col items-center;
+  @apply w-[300px] h-[270px]  flex flex-col items-center justify-center;
 }
 .homecardcontainer p {
   @apply font-serif font-extrabold w-40;
@@ -217,6 +217,6 @@ body {
   line-height: 120px;
 }
 
-.cardcontainer {
+.cardcontainerrrr {
   @apply w-[100%] h-[99vh] bg-[url('/img/download.jpeg')];
 }

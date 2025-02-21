@@ -2,7 +2,7 @@ import React from "react";
 
 function page() {
   return (
-    <div className="cardcontainer">
+    <div className="cardcontainerrrr">
       <div class="card">
         <div class="outside">
           <div class="front">
