@@ -2,20 +2,221 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+.lanterncontainer {
+  width: 100%;
+  background-image: url("/img/lanternbackground.png");
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+}
+
+.lanterndiv1 {
+  @apply h-[200px] w-full flex justify-around p-0;
+}
+.lanterndiv2 {
+  @apply h-[300px] w-full flex  justify-around  p-0 mt-[-20px];
+}
+.lanterndiv3 {
+  @apply h-[300px] w-full flex  justify-around  p-0 mt-[-60px];
+}
+
+.lan1 {
+  @apply w-[100px] h-[130px] cursor-pointer transition-all duration-300;
+  background: url("/img/lan1.png") no-repeat center;
+  background-size: cover;
+}
+
+.lan1:hover {
+  filter: drop-shadow(0px 0px 20px rgba(255, 80, 0, 0.8))
+    drop-shadow(0px 0px 40px rgba(255, 100, 0, 0.9))
+    drop-shadow(0px 0px 60px rgba(255, 120, 0, 1)) brightness(1.2);
+}
+
+.lan2 {
+  @apply w-[150px] h-[200px] cursor-pointer transition-all duration-300;
+  background: url("/img/lan1.png") no-repeat center;
+  background-size: cover;
+}
+
+.lan2:hover {
+  filter: drop-shadow(0px 0px 30px rgba(255, 80, 0, 0.8))
+    drop-shadow(0px 0px 60px rgba(255, 100, 0, 0.9))
+    drop-shadow(0px 0px 90px rgba(255, 120, 0, 1)) brightness(1.2);
+}
+
+.homecontainer {
+  @apply w-[100%] h-[98vh] bg-[url('/img/bluepic.jpeg')] bg-contain flex justify-center items-center;
+}
+
+.home-card1 {
+  @apply w-[500px] h-[320px] bg-[#FFCE9D] rounded-2xl flex flex-col items-center pt-6 relative mb-10;
+}
+.homecardcontainer {
+  @apply w-[300px] h-[270px]  flex flex-col items-center;
+}
+.homecardcontainer p {
+  @apply font-serif font-extrabold w-40;
+}
+
+.btn1 {
+  @apply w-[70px] h-[50px] rounded-3xl pt-4 pb-5 pl-6 bg-orange-500 mb-6 absolute top-[78%] left-[80%] border-none;
+}
+
+.home-card2 {
+  @apply w-[500px] h-[320px] bg-[#FFCE9D] rounded-2xl flex flex-col items-center relative mb-10;
+}
+
+.home-card3 {
+  @apply w-[500px] h-[320px] bg-[#FFCE9D] rounded-2xl flex justify-evenly relative pt-24;
+}
+
+.cardcontainer {
+  @apply w-[520px] h-[340px] overflow-hidden;
+}
+
+.message {
+  @apply absolute bg-[url('/img/goooddd.jpeg')] bg-cover w-[470px] h-[390px] top-[25%] left-[35%] p-4;
+}
+
+.card {
+  width: 640px;
+  height: 400px;
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  -webkit-perspective: 1200px;
+  perspective: 1200px;
+  transition: 1s;
+}
+.card:hover {
+  transform: rotate(-5deg);
+}
+.card:hover .outside {
+  transform: rotateY(-130deg);
+}
+.outside,
+.inside {
+  height: 100%;
+  width: 50%;
+  position: absolute;
+  left: 50.1%;
+}
+.inside {
+  background: linear-gradient(to right, #e7e7e7, #ffffff 30%);
+  line-height: 3;
+  padding: 0 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  left: 50%;
+}
+.outside {
+  -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+  z-index: 1;
+  transform-origin: left;
+  transition: 2s;
+  cursor: pointer;
+}
+.front,
+.back {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform: rotateX(0deg);
+}
+.front {
+  background-color: #ffffff;
+}
+.back {
+  transform: rotateY(180deg);
+  background: linear-gradient(to left, #e7e7e7, #ffffff 30%);
+}
+.cake {
+  width: 100%;
+  position: absolute;
+  bottom: 30px;
+}
+.top-layer,
+.middle-layer,
+.bottom-layer {
+  height: 80px;
+  width: 240px;
+  background-repeat: repeat;
+  background-size: 60px 100px;
+  background-position: 28px 0;
+  background-image: linear-gradient(
+      transparent 50px,
+      #fedbab 50px,
+      #fedbab 60px,
+      transparent 60px
+    ),
+    radial-gradient(circle at 30px 5px, #994c10 30px, #fcbf29 31px);
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  margin: auto;
+}
+.middle-layer {
+  transform: scale(0.85);
+  top: 6px;
+}
+.top-layer {
+  transform: scale(0.7);
+  top: 26px;
+}
+.candle {
+  height: 45px;
+  width: 15px;
+  background: repeating-linear-gradient(
+    45deg,
+    #fd3018 0,
+    #fd3018 5px,
+    #ffa89e 5px,
+    #ffa89e 10px
+  );
+  position: absolute;
+  margin: auto;
+  left: 0;
+  right: 0;
+  bottom: 202px;
+}
+.candle:before {
+  content: "";
+  position: absolute;
+  height: 16px;
+  width: 16px;
+  background-color: #ffa500;
+  border-radius: 0 50% 50% 50%;
+  bottom: 48px;
+  transform: rotate(45deg);
+  left: -1px;
+}
+.outside p {
+  font-size: 23px;
+  text-transform: uppercase;
+  margin-top: 30px;
+  text-align: center;
+  letter-spacing: 6px;
+  color: #000046;
+}
+.inside h1 {
+  font-size: 120px;
+  line-height: 120px;
+}
+
+.cardcontainer {
+  @apply w-[100%] h-[99vh] bg-[url('/img/download.jpeg')];
 }
